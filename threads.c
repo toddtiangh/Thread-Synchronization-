@@ -1,4 +1,4 @@
-#include "ec440threads.h"
+#include "threads.h"
 #include <pthread.h>
 #include <sys/time.h>
 #include <signal.h>
