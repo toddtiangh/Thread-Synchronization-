@@ -1,5 +1,5 @@
-#ifndef __EC440THREADS__
-#define __EC440THREADS__
+#ifndef __THREADS__
+#define __THREADS__
 
 #include <pthread.h>
 #include <sys/time.h>
