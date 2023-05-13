@@ -1,6 +1,5 @@
 #ifndef __THREADS__
 #define __THREADS__
-
 #include <pthread.h>
 #include <sys/time.h>
 #include <signal.h>
@@ -14,11 +13,6 @@
 #include <ucontext.h>
 #include <sys/ucontext.h>
 #include <limits.h>
-
-
-/*
- * This file is derived from code provided by Prof. Egele
- */
 
 /*static unsigned long int ptr_demangle(unsigned long int p)
 {
@@ -183,10 +177,8 @@ bool enqueue(Queue * queue, pthread_t tid) // this just adds a thread to the end
 
 pthread_t dequeue(Queue * queue) // this takes the first node in our queue and returns the thread tid and then frees the node
 {
-//	pthread_mutex_lock(&(queue->mutex));
 	if(isEmpty(queue))
 	{
-//		pthread_mutex_unlock(&(queue->mutex));
 		return -1;
 	}
 
@@ -200,19 +192,16 @@ pthread_t dequeue(Queue * queue) // this takes the first node in our queue and r
 	}
 
 	free(temp);
-//	pthread_mutex_unlock(&(queue->mutex));
 	return tid;
 }
 
 void destroyQueue(Queue * queue) // bye bye queue
 {
-//	pthread_mutex_lock(&(queue->mutex));
+
 	while(!isEmpty(queue))
 	{
 		dequeue(queue);
 	}
-//	pthread_mutex_unlock(&(queue->mutex));
-//	pthread_mutex_destroy(&(queue->mutex));
 	free(queue);
 }
 
