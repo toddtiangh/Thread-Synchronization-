@@ -5,11 +5,11 @@ override CFLAGS := -Wall -Werror -std=gnu99 -O0 -g $(CFLAGS) -I.
 #CC = gcc
 
 # Build the threads.o file                                                                                   
-threads.o: threads.c ec440threads.h
+threads.o: threads.c threads.h
 
-#busy_threads.o: tests/busy_threads.c ec440threads.h
-#full_threads.o: tests/full_threads.c ec440threads.h
-#makemore.o: tests/makemore.c ec440threads.h
+#busy_threads.o: tests/busy_threads.c threads.h
+#full_threads.o: tests/full_threads.c threads.h
+#makemore.o: tests/makemore.c threads.h
 
 # make executable                                                                                            
 #test_busy_threads: busy_threads.o threads.o
