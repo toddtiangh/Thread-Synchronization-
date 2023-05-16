@@ -15,18 +15,12 @@
 #include <stdint.h>
 #include <stdalign.h>
 
-/* You can support more threads. At least support this many. */
 #define MAX_THREADS 128
 
-/* Your stack should be this many bytes in size */
 #define THREAD_STACK_SIZE 32767
 
-/* Number of microseconds between scheduling events */
 #define SCHEDULER_INTERVAL_USECS (50 * 1000)
 
-/* Extracted from private libc headers. These are not part of the public
- * interface for jmp_buf.
- */
 #define JB_RBX 0
 #define JB_RBP 1
 #define JB_R12 2
